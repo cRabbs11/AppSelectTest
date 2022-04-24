@@ -28,7 +28,7 @@ class FilmListFragmentViewModel(): ViewModel() {
         isWaitingRequest = true
         retrofitService.getFilms(
             type = NYT_API_CONSTANTS.FILM_REVIEWS_TYPE_ALL,
-            api_key = API_KEYS.NYT_MOVIES_KEY,
+            api_key = BuildConfig.NYTApiKey,
             offset = NYTFilmsPage*NYT_API_CONSTANTS.FILMS_LIST_PAGE_KOEF
         ).enqueue(object: Callback<NYTFilmData> {
             override fun onResponse(call: Call<NYTFilmData>, response: Response<NYTFilmData>) {
