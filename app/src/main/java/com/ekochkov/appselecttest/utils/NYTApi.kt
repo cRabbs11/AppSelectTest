@@ -11,7 +11,6 @@ interface NYTApi {
     @GET("movies/v2/reviews/{type}.json")
     fun getFilms(
         @Path("type") type: String,
-        @Query("offset") offset: Int,
-        @Query("api-key") api_key: String
+        @Query("offset") offset: Int
     ): Call<NYTFilmData>
 }
